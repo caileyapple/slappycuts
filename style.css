@@ -1,18 +1,80 @@
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #000;
+  border-bottom: 2px solid #c59d5f;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+header p {
+  color: #c59d5f;
+  margin-top: 5px;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: #1a1a1a;
 }
 
 .tabs button {
-  padding: 10px;
-  margin: 5px;
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: 0.3s;
 }
 
+.tabs button:hover {
+  color: #c59d5f;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid #c59d5f;
+  color: #c59d5f;
+}
+
+/* CONTENT */
 .tab-content {
   display: none;
-  padding: 20px;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .tab-content.active {
   display: block;
+}
+
+/* BUTTON (used for booking) */
+.btn {
+  display: inline-block;
+  background: #c59d5f;
+  color: #000;
+  padding: 12px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #fff;
 }
