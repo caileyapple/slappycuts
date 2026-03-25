@@ -1,8 +1,9 @@
 function showTab(tabId) {
-  let tabs = document.querySelectorAll(".tab-content");
+  // Hide all tabs
+  const tabs = document.querySelectorAll(".tab-content");
+  tabs.forEach(tab => tab.classList.remove("active"));
 
-  tabs.forEach(tab => {
-    tab.classList.remove("active");
-  });
-
-  document.getElementById(tabId).classList.add("active");
+  // Show selected tab
+  const activeTab = document.getElementById(tabId);
+  activeTab.classList.add("active");
+}
