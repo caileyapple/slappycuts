@@ -7,5 +7,3 @@ function showTab(tabId) {
   const activeTab = document.getElementById(tabId);
   activeTab.classList.add("active");
 }
-
-alert("JS is working");
