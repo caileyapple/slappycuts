@@ -5,6 +5,13 @@ body {
   color: #fff;
 }
 
+.roboto-slab-<uniquifier> {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 /* HEADER */
 header {
   text-align: center;
