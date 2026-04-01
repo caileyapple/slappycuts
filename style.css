@@ -1,96 +1,191 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0d0d0d;
-  color: #fff;
+:root {
+  --bg: #0b0b0c;
+  --panel: #111214;
+  --accent: #c59d5f;
+  --accent-soft: rgba(197,157,95,0.15);
+  --text: #f5f5f5;
+  --muted: #9a9a9a;
 }
 
-.roboto-slab-<uniquifier> {
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #151515, #070707);
+  color: var(--text);
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 40px 20px;
-  background: #000;
-  border-bottom: 2px solid #c59d5f;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #000, #0b0b0c);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 header h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3.5rem;
+  letter-spacing: 4px;
   margin: 0;
-  font-size: 3rem;
-  letter-spacing: 3px;
 }
 
 header p {
-  color: #c59d5f;
-  margin-top: 5px;
+  color: var(--accent);
+  margin-top: 8px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
-#Home img {
-  width: 300px;
-  display: block;
-  margin: 10px auto;
-  border-radius: 10px;
-  border: 3px solid white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-/* TABS */
+/* NAV TABS */
 .tabs {
   display: flex;
   justify-content: center;
-  background: #1a1a1a;
+  background: rgba(20,20,20,0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .tabs button {
   background: none;
   border: none;
-  color: #fff;
-  padding: 15px 20px;
-  font-size: 1rem;
+  color: var(--muted);
+  padding: 16px 22px;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.25s ease;
+  position: relative;
 }
 
 .tabs button:hover {
-  color: #c59d5f;
+  color: #fff;
 }
 
 .tabs button.active {
-  border-bottom: 2px solid #c59d5f;
-  color: #c59d5f;
+  color: var(--accent);
 }
 
-/* CONTENT */
+.tabs button.active::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* CONTENT AREA */
 .tab-content {
   display: none;
-  padding: 40px;
-  max-width: 900px;
+  padding: 50px 25px;
+  max-width: 1000px;
   margin: auto;
+  animation: fadeIn 0.4s ease;
 }
 
 .tab-content.active {
   display: block;
 }
 
-/* BUTTON (used for booking) */
-.btn {
-  display: inline-block;
-  background: #c59d5f;
-  color: #000;
-  padding: 12px 20px;
-  margin-top: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: 0.3s;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 
+/* HEADINGS */
+h1, h2, h3 {
+  font-family: 'Roboto Slab', serif;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+/* IMAGES */
+#Home img {
+  width: 280px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+#Home img:hover {
+  transform: scale(1.03);
+}
+
+/* CARD STYLE (for services later if you upgrade HTML) */
+.card {
+  background: var(--panel);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 15px 0;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  border: 1px solid var(--accent-soft);
+  transform: translateY(-3px);
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  padding: 14px 22px;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px rgba(197,157,95,0.2);
+}
+
+.btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.2);
+}
+
+/* TEXT POLISH */
+p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+h4 {
+  margin-bottom: 5px;
+}
+
+/* CONTACT STYLE */
+#Contact h2 {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .tabs button {
+    padding: 12px;
+  }
+}
 .btn:hover {
   background: #fff;
 }
