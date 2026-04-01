@@ -40,6 +40,13 @@ header p {
   letter-spacing: 1px;
 }
 
+header img {
+  width: 120px;   /* adjust size here */
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
 /* NAV TABS */
 .tabs {
   display: flex;
