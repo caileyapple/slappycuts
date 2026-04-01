@@ -20,21 +20,24 @@ body {
 
 /* HEADER */
 header {
+  backgroun: #ffffff;
   text-align: center;
   padding: 60px 20px;
   background: linear-gradient(to bottom, #000, #0b0b0c);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid #ddd;
 }
 
 header h1 {
+  color: #000
   font-family: 'Roboto Slab', serif;
   font-size: 3.5rem;
   letter-spacing: 4px;
   margin: 0;
+  text-shadow: none; /* removes graffiti glow so it looks clean on white */
 }
 
 header p {
-  color: var(--accent);
+  color: #ff3c00; /* keeps your accent */;
   margin-top: 8px;
   font-size: 0.9rem;
   letter-spacing: 1px;
