@@ -133,6 +133,42 @@ h2 {
   transform: scale(1.03);
 }
 
+/* IMAGES */
+#Home img {
+  width: 280px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+}
+
+#Home img:hover {
+  transform: scale(1.03);
+}
+
+/* PHOTO GALLERY */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  transition: transform 0.25s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.02);
+}
+
 /* CARD STYLE (for services later if you upgrade HTML) */
 .card {
   background: var(--panel);
